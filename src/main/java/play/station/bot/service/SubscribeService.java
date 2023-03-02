@@ -3,18 +3,15 @@ package play.station.bot.service;
 import org.springframework.stereotype.Service;
 import play.station.bot.model.entities.Subscriber;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class SubscribeService {
 
-    List<Subscriber> list = new ArrayList<>();
-    public List<Subscriber> getAllSubscribers(){
-        return list;
-    }
+    private Map<String, Subscriber> map = new HashMap<>();
 
-    public void subscribe(Long chatId, String pair) {
-        list.add(new Subscriber(chatId));
+    public void saveSubscriber(String productId, Subscriber subscriber) {
+        map.put(productId, subscriber);
     }
 }

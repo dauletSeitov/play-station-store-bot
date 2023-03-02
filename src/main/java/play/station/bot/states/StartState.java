@@ -6,8 +6,8 @@ import play.station.bot.util.TelegramBoot;
 
 import java.util.List;
 
-public class SearchState extends State {
-    public SearchState(TelegramBoot telegramBoot) {
+public class StartState extends State {
+    public StartState(TelegramBoot telegramBoot) {
         super(telegramBoot);
     }
 

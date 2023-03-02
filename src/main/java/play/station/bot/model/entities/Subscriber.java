@@ -8,4 +8,5 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Subscriber {
     private final Long chatId;
+    private final String login;
 }

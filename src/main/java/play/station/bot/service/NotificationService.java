@@ -11,9 +11,9 @@ public class NotificationService {
 
     private final SubscribeService subscribeService;
     private final TelegramBoot telegramBoot;
-    public void send(String body) {
-        for (Subscriber subscriber : subscribeService.getAllSubscribers()) {
-            telegramBoot.sendMessage(body, subscriber.getChatId());
-        }
-    }
+//    public void send(String message) {
+//        for (Subscriber subscriber : subscribeService.getAllSubscribers()) {
+//            telegramBoot.sendMessage(subscriber.getChatId(), message);
+//        }
+//    }
 }
