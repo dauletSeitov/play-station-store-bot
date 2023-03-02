@@ -12,15 +12,17 @@ public class StartState extends State {
     }
 
     @Override
-    public void cancel(Long chatId) {
-        telegramBoot.exit(chatId);
+    public void search(Update update) {
+        telegramBoot.showMessageEnterPhrase(update);
+        telegramBoot.setState(update.getMessage().getChatId(), new SearchState(telegramBoot));
     }
 
     @Override
-    public void go(Update update) {
-        Long chatId = update.getMessage().getChatId();
-        List<Product> list = telegramBoot.search(chatId, update.getMessage().getText());
-        if (list.isEmpty()) return;
-        telegramBoot.setState(chatId, new ChoseState(telegramBoot, list));
+    public void subscriptions(Update update) {
+        List<Product> productList = telegramBoot.getSubscribedProducts(update);
+        if (!productList.isEmpty()) {
+            telegramBoot.setState(update.getMessage().getChatId(), new UnsubscribeState(telegramBoot, productList));
+        }
     }
+
 }

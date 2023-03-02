@@ -15,7 +15,7 @@ import play.station.bot.model.entities.Subscriber;
 import play.station.bot.service.ProductService;
 import play.station.bot.service.SearchService;
 import play.station.bot.service.SubscribeService;
-import play.station.bot.states.SearchState;
+import play.station.bot.states.StartState;
 import play.station.bot.states.State;
 
 import java.util.HashMap;
@@ -63,12 +63,25 @@ public class TelegramBoot extends TelegramLongPollingBot {
         String text = update.getMessage().getText();
         log.info("got message: {}", text);
 
-        State state = chatStateMap.getOrDefault(chatId, new SearchState(this));
+        State state = chatStateMap.getOrDefault(chatId, new StartState(this));
 
-        if ("exit".equalsIgnoreCase(update.getMessage().getText())) {
-            state.cancel(chatId);
-        } else {
-            state.go(update);
+        switch (update.getMessage().getText()) {
+            case "exit":
+                state.cancel(chatId);
+                break;
+            case "search":
+                state.search(update);
+                break;
+            case "subscriptions":
+                state.subscriptions(update);
+                break;
+            case "unsubscribe":
+                state.unsubscribe(update);
+                break;
+            default:
+                state.go(update);
+
+
         }
     }
 
@@ -114,7 +127,15 @@ public class TelegramBoot extends TelegramLongPollingBot {
                 .replace("${num}", "" + i)
                 .replace("${actualPrice}", product.getActualPrice());
     }
+// actions
 
+    public void exit(Long chatId) {
+        sendMessage(chatId, "Pleas enter command");
+    }
+
+    public void showMessageEnterPhrase(Update update) {
+        sendMessage(update.getMessage().getChatId(), "Pleas enter phrase to search");
+    }
 
     public List<Product> search(Long chatId, String name) {
         List<Product> productList = searchService.search(name);
@@ -127,9 +148,6 @@ public class TelegramBoot extends TelegramLongPollingBot {
         return productList;
     }
 
-    public void exit(Long chatId) {
-        sendMessage(chatId, "Pleas enter phrase to search");
-    }
 
     public boolean subscribe(Update update, List<Product> productList) {
 
@@ -150,7 +168,44 @@ public class TelegramBoot extends TelegramLongPollingBot {
         productService.saveProduct(product);
         Subscriber subscriber = new Subscriber(chatId, update.getMessage().getFrom().getUserName());
         subscribeService.saveSubscriber(product.getId(), subscriber);
-        sendMessage(chatId, String.format("You subscribed to product (%s). As soon as the price changes we will let you know. To subscribe to other products. Please enter the phrase to search.", product.getName()));
+        sendMessage(chatId, String.format("You subscribed to product (%s). As soon as the price changes we will let you know. To subscribe to other products. Please enter next command.", product.getName()));
+        return true;
+    }
+
+    public List<Product> getSubscribedProducts(Update update) {
+
+        Long chatId = update.getMessage().getChatId();
+        List<String> productIds = subscribeService.getProductIdsByChatId(chatId);
+        List<Product> productList = productService.getProductsByIds(productIds);
+
+        if (productList.isEmpty()) {
+            sendMessage(chatId, "You dont have any subscription");
+        } else {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < productList.size(); i++) {
+                sb.append(createCaption(productList.get(i), i)).append("\n");
+            }
+            sendMessage(chatId, sb.toString());
+            sendMessage(chatId, "please type chosen games number to unsubscribe. Or type exit to cancel");
+        }
+        return productList;
+    }
+
+    public boolean unsubscribe(Update update, List<Product> productList) {
+        Long chatId = update.getMessage().getChatId();
+        String text = update.getMessage().getText();
+        Product product;
+
+        try {
+            int i = Integer.parseInt(text);
+            product = productList.get(i);
+        } catch (Exception ex) {
+            log.error(ex.getMessage(), ex);
+            sendMessage(chatId, String.format("No such product with number (%s). Please chose other number or type exit to cancel", text));
+            return false;
+        }
+        subscribeService.unsubscribe(update.getMessage().getChatId(), product.getId());
+        sendMessage(chatId, String.format("You successfully unsubscribed from the product (%s)", product.getName()));
         return true;
     }
 }

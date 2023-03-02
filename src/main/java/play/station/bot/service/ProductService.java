@@ -4,18 +4,20 @@ import org.springframework.stereotype.Service;
 import play.station.bot.model.entities.Product;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
 
-    private Map<String, Product> map = new HashMap<>();
-
-//    public String getPrice(String name, String price) {
-//        return map.getOrDefault(name, "");
-//    }
+    private final Map<String, Product> map = new HashMap<>();
 
     public void saveProduct(Product product) {
         map.putIfAbsent(product.getId(), product);
+    }
+
+    public List<Product> getProductsByIds(List<String> productIds) {
+        return productIds.stream().map(map::get).collect(Collectors.toList());
     }
 }

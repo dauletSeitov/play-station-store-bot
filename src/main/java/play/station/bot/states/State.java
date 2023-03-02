@@ -3,11 +3,30 @@ package play.station.bot.states;
 import lombok.RequiredArgsConstructor;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import play.station.bot.util.TelegramBoot;
+
 @RequiredArgsConstructor
 public abstract class State {
     protected final TelegramBoot telegramBoot;
 
-    public abstract void cancel(Long chatId);
+    public void cancel(Long chatId) {
+        telegramBoot.exit(chatId);
+        telegramBoot.setState(chatId, new StartState(telegramBoot));
+    }
 
-    public abstract void go(Update update);
+    public void go(Update update) {
+        telegramBoot.exit(update.getMessage().getChatId());
+    }
+
+    public void unsubscribe(Update update) {
+        telegramBoot.exit(update.getMessage().getChatId());
+    }
+
+    public void search(Update update) {
+        telegramBoot.exit(update.getMessage().getChatId());
+    }
+
+    public void subscriptions(Update update) {
+        telegramBoot.exit(update.getMessage().getChatId());
+    }
+
 }

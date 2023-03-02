@@ -7,18 +7,12 @@ import play.station.bot.util.TelegramBoot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChoseState extends State {
+public class SubscribeState extends State {
     private List<Product> productList = new ArrayList<>();
 
-    public ChoseState(TelegramBoot telegramBoot, List<Product> productList) {
+    public SubscribeState(TelegramBoot telegramBoot, List<Product> productList) {
         super(telegramBoot);
         this.productList = productList;
-    }
-
-    @Override
-    public void cancel(Long chatId) {
-        telegramBoot.exit(chatId);
-        telegramBoot.setState(chatId, new SearchState(telegramBoot));
     }
 
     @Override
@@ -26,7 +20,8 @@ public class ChoseState extends State {
 
         boolean subscribed = telegramBoot.subscribe(update, productList);
         if (subscribed) {
-            telegramBoot.setState(update.getChannelPost().getChatId(), new SearchState(telegramBoot));
+            telegramBoot.setState(update.getMessage().getChatId(), new StartState(telegramBoot));
         }
     }
+
 }
