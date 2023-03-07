@@ -2,18 +2,20 @@ package play.station.bot.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import play.station.bot.util.TelegramBoot;
 import play.station.bot.model.entities.Subscriber;
+import play.station.bot.util.TelegramBoot;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class NotificationService {
 
-    private final SubscribeService subscribeService;
     private final TelegramBoot telegramBoot;
-//    public void send(String message) {
-//        for (Subscriber subscriber : subscribeService.getAllSubscribers()) {
-//            telegramBoot.sendMessage(subscriber.getChatId(), message);
-//        }
-//    }
+
+    public void send(List<Subscriber> subscribers, String message) {
+        for (Subscriber subscriber : subscribers) {
+            telegramBoot.sendMessage(subscriber.getChatId(), message);
+        }
+    }
 }

@@ -1,60 +1,48 @@
 package play.station.bot.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import play.station.bot.model.entities.Product;
+import play.station.bot.model.entities.Subscriber;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class JobService {
-    private final RestTemplate restTemplate;
-    private final NotificationService notificationService;
-    private final ObjectMapper objectMapper;
-    private final ProductService gameService;
 
-    //@Scheduled(fixedRate = 5000)
-//    public void doScan() throws IOException {
-//        log.info("The time is now {}", LocalDateTime.now());
-//
-//        String s = Files.readString(Path.of("/home/phantom/IdeaProjects/play-station-store-bot/1.txt"));
-//
-//        String fooResourceUrl = "https://web.np.playstation.com/api/graphql/v1//op?operationName=queryRetrieveTelemetryDataPDPProduct&variables=%7B%22conceptId%22%3Anull%2C%22productId%22%3A%22EP4433-CUSA00265_00-MINECRAFTPS40001%22%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22163ce11323f3618e7a2fb5ef467db2f7f02ddade88218a83b5b414f1f65cfdce%22%7D%7D";
-//
-//
-//        URL url = new URL(fooResourceUrl);
-//        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//        con.setRequestMethod("GET");
-//
-//        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-//        String inputLine;
-//        StringBuffer content = new StringBuffer();
-//        while ((inputLine = in.readLine()) != null) {
-//            content.append(inputLine);
-//        }
-//        in.close();
-//
-//        JsonNode jsonNode = objectMapper.readTree(content.toString());
-//        JsonNode jsonNode1 = jsonNode.get("data").get("productRetrieve").get("webctas");
-//        for (JsonNode price : jsonNode1) {
-//            if(price.get("").equals("")){
-//                gameService.addGame("minecraft", "");
-//            }
-//            //System.out.println(objNode);
-//        }
-//
-//        notificationService.send(content.toString());
-//    }
+    private final NotificationService notificationService;
+    private final ProductService productService;
+    private final SubscribeService subscribeService;
+    private final SearchService searchService;
+
+    @Scheduled(fixedRate = 60000)//TODO
+    public void doScan() throws IOException, InterruptedException {
+        log.info("The time is now {}", LocalDateTime.now());
+
+        List<Product> productList = productService.getAll();
+
+        for (Product product : productList) {
+            List<Product> search = searchService.search(product.getName());
+            Optional<Product> productOpt = search.stream().filter(itm -> itm.getId().equals(product.getId())).findFirst();
+            if (productOpt.isPresent() && !productOpt.get().getPrice().equals(product.getPrice())) {
+                notify(product, productOpt.get());
+            }
+            System.out.println();
+//            Thread.sleep(1000); TODO 
+        }
+
+
+    }
+
+    private void notify(Product oldProduct, Product currentProduct) {
+        List<Subscriber> subscribers = subscribeService.getByProductId(oldProduct.getId());
+        notificationService.send(subscribers, String.format("Product (%s) is available by price %s. Previous price: %s", oldProduct.getName(), currentProduct.getPrice(), oldProduct.getPrice()));
+    }
 }

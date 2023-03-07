@@ -37,4 +37,8 @@ public class SubscribeService {
         List<Subscriber> rest = map.get(productId).stream().filter(itm -> !itm.getChatId().equals(chatId)).collect(Collectors.toList());
         map.put(productId, rest);
     }
+
+    public List<Subscriber> getByProductId(String id) {
+        return map.getOrDefault(id, List.of());
+    }
 }
