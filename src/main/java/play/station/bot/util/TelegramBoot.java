@@ -10,6 +10,11 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import play.station.bot.model.entities.Product;
 import play.station.bot.model.entities.Subscriber;
 import play.station.bot.service.ProductService;
@@ -18,6 +23,7 @@ import play.station.bot.service.SubscribeService;
 import play.station.bot.states.StartState;
 import play.station.bot.states.State;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,34 +69,76 @@ public class TelegramBoot extends TelegramLongPollingBot {
         String text = update.getMessage().getText();
         log.info("got message: {}", text);
 
-        State state = chatStateMap.getOrDefault(chatId, new StartState(this));
-
-        switch (update.getMessage().getText()) {
-            case "exit":
-                state.cancel(chatId);
-                break;
-            case "search":
-                state.search(update);
-                break;
-            case "subscriptions":
-                state.subscriptions(update);
-                break;
-            case "unsubscribe":
-                state.unsubscribe(update);
-                break;
-            default:
-                state.go(update);
 
 
-        }
+        sendMessage(update.getMessage().getChatId(), "ok");
+
+//        State state = chatStateMap.getOrDefault(chatId, new StartState(this));
+//
+//        switch (update.getMessage().getText()) {
+//            case "exit":
+//                state.cancel(chatId);
+//                break;
+//            case "search":
+//                state.search(update);
+//                break;
+//            case "subscriptions":
+//                state.subscriptions(update);
+//                break;
+//            case "unsubscribe":
+//                state.unsubscribe(update);
+//                break;
+//            default:
+//                state.go(update);
+//
+//
+//        }
     }
+    public synchronized void setButtons(SendMessage sendMessage) {
+        // Create a keyboard
+        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        sendMessage.setReplyMarkup(replyKeyboardMarkup);
+        replyKeyboardMarkup.setSelective(true);
+        replyKeyboardMarkup.setResizeKeyboard(true);
+        replyKeyboardMarkup.setOneTimeKeyboard(false);
 
+        // Create a list of keyboard rows
+        List<KeyboardRow> keyboard = new ArrayList<>();
+
+        // First keyboard row
+        KeyboardRow keyboardFirstRow = new KeyboardRow();
+        // Add buttons to the first keyboard row
+        keyboardFirstRow.add(new KeyboardButton("Hi"));
+
+        // Second keyboard row
+        KeyboardRow keyboardSecondRow = new KeyboardRow();
+        // Add the buttons to the second keyboard row
+        keyboardSecondRow.add(new KeyboardButton("Help"));
+
+        // Add all of the keyboard rows to the list
+        keyboard.add(keyboardFirstRow);
+        keyboard.add(keyboardSecondRow);
+        // and assign this list to our keyboard
+        replyKeyboardMarkup.setKeyboard(keyboard);
+    }
 
     public void sendMessage(Long chatId, String message) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText(message);
         sendMessage.setParseMode(ParseMode.HTML);
+
+//        var next = InlineKeyboardButton.builder()
+//                .text("Next").callbackData("next")
+//                .build();
+//
+//        InlineKeyboardMarkup build = InlineKeyboardMarkup.builder()
+//                .keyboardRow(List.of(next)).build();
+//
+//        sendMessage.setReplyMarkup(build);
+
+        setButtons(sendMessage);
+
         try {
             execute(sendMessage);
         } catch (Exception e) {
