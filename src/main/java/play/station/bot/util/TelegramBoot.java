@@ -15,7 +15,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMar
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import play.station.bot.model.entities.Product;
-import play.station.bot.model.entities.Subscriber;
 import play.station.bot.service.ProductService;
 import play.station.bot.service.SearchService;
 import play.station.bot.service.SubscribeService;
@@ -198,9 +197,8 @@ public class TelegramBoot extends TelegramLongPollingBot {
             return false;
         }
 
-        productService.saveProduct(product);
-        Subscriber subscriber = new Subscriber(chatId, update.getMessage().getFrom().getUserName());
-        subscribeService.saveSubscriber(product.getId(), subscriber);
+        productService.subscribe(product, chatId, update.getMessage().getFrom().getUserName());
+
         sendMessage(chatId,
                 String.format("You subscribed to product (%s). As soon as the price changes we will let you know. To subscribe to other products. Please enter next command",
                         product.getName()),
@@ -211,8 +209,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
     public List<Product> getSubscribedProducts(Update update) {
 
         Long chatId = Utils.getChatId(update);
-        List<String> productIds = subscribeService.getProductIdsByChatId(chatId);
-        List<Product> productList = productService.getProductsByIds(productIds);
+        List<Product> productList = productService.getSubscribedProducts(chatId);
 
         if (productList.isEmpty()) {
             sendMessage(chatId, "You don't have any subscription", List.of(actions.getSearch(), actions.getSubscriptions()));

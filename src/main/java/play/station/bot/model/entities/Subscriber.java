@@ -1,12 +1,22 @@
 package play.station.bot.model.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
-//@Entity
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 @Data
-@RequiredArgsConstructor
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Subscriber {
-    private final Long chatId;
-    private final String login;
+
+    @Id
+    private String login;
+
+    private Long chatId;
 }
