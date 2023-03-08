@@ -167,7 +167,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
             sendMessage(chatId, "Nothing was found, please try other phrase", List.of(actions.getCancel()));
         } else {
             sendImages(chatId, productList);
-            sendMessage(chatId, "Please type chosen games number to subscribe.", List.of(actions.getCancel()));
+            sendMessage(chatId, "Please type chosen games number to subscribe", List.of(actions.getCancel()));
         }
         return productList;
     }
@@ -185,7 +185,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
             product = productList.get(i);
         } catch (Exception ex) {
             log.error(ex.getMessage(), ex);
-            sendMessage(chatId, String.format("No such product with number (%s). Please chose other number", List.of(actions.getCancel())));
+            sendMessage(chatId, String.format("No such product with number (%s). Please choose another number", List.of(actions.getCancel())));
             return false;
         }
 
@@ -193,7 +193,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
         Subscriber subscriber = new Subscriber(chatId, update.getMessage().getFrom().getUserName());
         subscribeService.saveSubscriber(product.getId(), subscriber);
         sendMessage(chatId,
-                String.format("You subscribed to product (%s). As soon as the price changes we will let you know. To subscribe to other products. Please enter next command.",
+                String.format("You subscribed to product (%s). As soon as the price changes we will let you know. To subscribe to other products. Please enter next command",
                         product.getName()),
                 List.of(actions.getSearch(), actions.getSubscriptions()));
         return true;
@@ -206,7 +206,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
         List<Product> productList = productService.getProductsByIds(productIds);
 
         if (productList.isEmpty()) {
-            sendMessage(chatId, "You dont have any subscription", List.of(actions.getSearch(), actions.getSubscriptions()));
+            sendMessage(chatId, "You don't have any subscription", List.of(actions.getSearch(), actions.getSubscriptions()));
         } else {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < productList.size(); i++) {
@@ -228,7 +228,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
             product = productList.get(i);
         } catch (Exception ex) {
             log.error(ex.getMessage(), ex);
-            sendMessage(chatId, String.format("No such product with number (%s). Please chose other number", text), List.of(actions.getCancel()));
+            sendMessage(chatId, String.format("No such product with numbers (%s). Please choose another number", text), List.of(actions.getCancel()));
             return false;
         }
         subscribeService.unsubscribe(Utils.getChatId(update), product.getId());
