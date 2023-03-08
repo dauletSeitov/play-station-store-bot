@@ -11,8 +11,9 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import play.station.bot.model.entities.Product;
 import play.station.bot.model.entities.Subscriber;
 import play.station.bot.service.ProductService;
@@ -103,17 +104,25 @@ public class TelegramBoot extends TelegramLongPollingBot {
         sendMessage(chatId, message, List.of());
     }
 
-    public void sendMessage(Long chatId, String message, List<InlineKeyboardButton> buttons) {
+    public void sendMessage(Long chatId, String message, List<KeyboardButton> buttons) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText(message);
         sendMessage.setParseMode(ParseMode.HTML);
 
-        InlineKeyboardMarkup build = InlineKeyboardMarkup.builder()
-                .keyboardRow(buttons).build();
+//        InlineKeyboardMarkup build = InlineKeyboardMarkup.builder()
+//                .keyboardRow(buttons).build();
 
-        sendMessage.setReplyMarkup(build);
+//        sendMessage.setReplyMarkup(build);
 
+
+        KeyboardRow keyboardFirstRow = new KeyboardRow();
+        keyboardFirstRow.addAll(buttons);
+
+        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        replyKeyboardMarkup.setResizeKeyboard(true);
+        replyKeyboardMarkup.setKeyboard(List.of(keyboardFirstRow));
+        sendMessage.setReplyMarkup(replyKeyboardMarkup);
 
         try {
             execute(sendMessage);
