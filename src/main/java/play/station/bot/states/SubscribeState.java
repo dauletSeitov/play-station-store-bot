@@ -3,6 +3,7 @@ package play.station.bot.states;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import play.station.bot.model.entities.Product;
 import play.station.bot.util.TelegramBoot;
+import play.station.bot.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class SubscribeState extends State {
 
         boolean subscribed = telegramBoot.subscribe(update, productList);
         if (subscribed) {
-            telegramBoot.setState(update.getMessage().getChatId(), new StartState(telegramBoot));
+            telegramBoot.setState(Utils.getChatId(update), new StartState(telegramBoot));
         }
     }
 
