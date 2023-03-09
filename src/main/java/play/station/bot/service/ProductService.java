@@ -32,14 +32,12 @@ public class ProductService {
         Optional<Product> productOpt = productRepository.findById(product.getId());
         if (productOpt.isEmpty()) {
             product.setSubscribers(Set.of(savedSubscriber));
-            product = productRepository.save(product);
+            productRepository.save(product);
         } else {
             product = productOpt.get();
             product.getSubscribers().add(savedSubscriber);
-            product = productRepository.save(product);
+            productRepository.save(product);
         }
-
-
     }
 
     public List<Product> getSubscribedProducts(Long chatId) {

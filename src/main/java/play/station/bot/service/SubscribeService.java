@@ -5,20 +5,23 @@ import org.springframework.stereotype.Service;
 import play.station.bot.model.entities.Product;
 import play.station.bot.model.entities.Subscriber;
 import play.station.bot.repository.ProductRepository;
-import play.station.bot.repository.SubscribeRepository;
 
-import java.util.List;
+import javax.transaction.Transactional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class SubscribeService {
 
-    private final SubscribeRepository subscribeRepository;
     private final ProductRepository productRepository;
 
+    @Transactional
     public void unsubscribe(Long chatId, String productId) {
-//        List<Subscriber> rest = map.get(productId).stream().filter(itm -> !itm.getChatId().equals(chatId)).collect(Collectors.toList());
-//        map.put(productId, rest);
+        Product product = productRepository.findById(productId).orElseThrow(() -> new RuntimeException("no such product"));
+        Set<Subscriber> subscribers = product.getSubscribers().stream().filter(itm -> !chatId.equals(itm.getChatId())).collect(Collectors.toSet());
+        product.setSubscribers(subscribers);
+        productRepository.save(product);
     }
 
 }

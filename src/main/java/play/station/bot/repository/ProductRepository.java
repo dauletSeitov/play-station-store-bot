@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, String> {
 
-    @Query("SELECT p FROM Product p JOIN p.subscribers s WHERE s.login = :chatId")
+    @Query("SELECT p FROM Product p JOIN p.subscribers s WHERE s.chatId = :chatId")
     List<Product> findSubscribedProductsByChatId(@Param("chatId") Long chatId);
+
 }

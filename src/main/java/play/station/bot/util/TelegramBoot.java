@@ -109,12 +109,6 @@ public class TelegramBoot extends TelegramLongPollingBot {
         sendMessage.setText(message);
         sendMessage.setParseMode(ParseMode.HTML);
 
-//        InlineKeyboardMarkup build = InlineKeyboardMarkup.builder()
-//                .keyboardRow(buttons).build();
-
-//        sendMessage.setReplyMarkup(build);
-
-
         KeyboardRow keyboardFirstRow = new KeyboardRow();
         keyboardFirstRow.addAll(buttons);
 
@@ -193,7 +187,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
             product = productList.get(i);
         } catch (Exception ex) {
             log.error(ex.getMessage(), ex);
-            sendMessage(chatId, String.format("No such product with number (%s). Please choose another number", List.of(actions.getCancel())));
+            sendMessage(chatId, String.format("No such product with number (%s). Please choose another number", text), List.of(actions.getCancel()));
             return false;
         }
 
@@ -238,7 +232,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
             return false;
         }
         subscribeService.unsubscribe(Utils.getChatId(update), product.getId());
-        sendMessage(chatId, String.format("You successfully unsubscribed from the product (%s)", product.getName()));
+        sendMessage(chatId, String.format("You successfully unsubscribed from the product (%s)", product.getName()), List.of(actions.getSearch(), actions.getSubscriptions()));
         return true;
     }
 }
