@@ -191,7 +191,8 @@ public class TelegramBoot extends TelegramLongPollingBot {
             return false;
         }
 
-        productService.subscribe(product, chatId, update.getMessage().getFrom().getUserName());
+        productService.subscribe(product, chatId, update.getMessage().getFrom().getUserName(),
+                update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName());
 
         sendMessage(chatId,
                 String.format("You subscribed to product (%s). As soon as the price changes we will let you know. To subscribe to other products. Please enter next command",

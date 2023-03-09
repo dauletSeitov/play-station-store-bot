@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Subscriber {
 
     @Id
-    private String login;
-
     private Long chatId;
+    private String login;
+    private String name;
 }

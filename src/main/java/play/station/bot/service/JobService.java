@@ -19,10 +19,9 @@ public class JobService {
 
     private final NotificationService notificationService;
     private final ProductService productService;
-    private final SubscribeService subscribeService;
     private final SearchService searchService;
 
-    @Scheduled(fixedRate = 60000)//TODO
+    @Scheduled(cron = "0 0 0 ? * * *")
     @Transactional
     public void doScan() throws IOException, InterruptedException {
         log.info("The time is now {}", LocalDateTime.now());
@@ -35,11 +34,8 @@ public class JobService {
             if (productOpt.isPresent() && !productOpt.get().getPrice().equals(product.getPrice())) {
                 notify(product, productOpt.get());
             }
-            System.out.println();
-//            Thread.sleep(1000); TODO 
+            Thread.sleep(1000);
         }
-
-
     }
 
     private void notify(Product oldProduct, Product currentProduct) {

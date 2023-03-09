@@ -24,9 +24,13 @@ public class ProductService {
     }
 
     @Transactional
-    public void subscribe(Product product, Long chatId, String userName) {
+    public void subscribe(Product product, Long chatId, String userName, String name) {
 
-        Subscriber subscriber = Subscriber.builder().chatId(chatId).login(userName).build();
+        Subscriber subscriber = Subscriber.builder()
+                .chatId(chatId)
+                .login(userName)
+                .name(name)
+                .build();
         Subscriber savedSubscriber = subscribeRepository.save(subscriber);
 
         Optional<Product> productOpt = productRepository.findById(product.getId());
