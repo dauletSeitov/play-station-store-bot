@@ -21,7 +21,7 @@ public class JobService {
     private final ProductService productService;
     private final SearchService searchService;
 
-    @Scheduled(cron = "0 0 0 ? * * *")
+    @Scheduled(cron = "0 0 0 * * *")
     @Transactional
     public void doScan() throws IOException, InterruptedException {
         log.info("The time is now {}", LocalDateTime.now());
