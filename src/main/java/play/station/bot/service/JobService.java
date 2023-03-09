@@ -24,14 +24,15 @@ public class JobService {
     @Scheduled(cron = "0 0 0 * * *")
     @Transactional
     public void doScan() throws IOException, InterruptedException {
-        log.info("The time is now {}", LocalDateTime.now());
 
         List<Product> productList = productService.getAll();
+        log.info("job started at: {} for products: {}", LocalDateTime.now(), productList.size());
 
         for (Product product : productList) {
             List<Product> search = searchService.search(product.getName());
             Optional<Product> productOpt = search.stream().filter(itm -> itm.getId().equals(product.getId())).findFirst();
             if (productOpt.isPresent() && !productOpt.get().getPrice().equals(product.getPrice())) {
+                log.info("price of product: {} changed", product);
                 notify(product, productOpt.get());
             }
             Thread.sleep(1000);
@@ -39,6 +40,7 @@ public class JobService {
     }
 
     private void notify(Product oldProduct, Product currentProduct) {
+        log.info("notify subscribers: {}", oldProduct.getSubscribers().size());
         notificationService.send(oldProduct.getSubscribers(), String.format("Product (%s) is available by price %s. Previous price: %s", oldProduct.getName(), currentProduct.getPrice(), oldProduct.getPrice()));
     }
 }

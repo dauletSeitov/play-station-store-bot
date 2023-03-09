@@ -74,7 +74,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
         }
         Long chatId = Utils.getChatId(update);
 
-        log.info("got message: {}", text);
+        log.info("got message: {} from :{}", text, chatId);
 
         State state = chatStateMap.getOrDefault(chatId, new StartState(this));
 
@@ -165,6 +165,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
     }
 
     public List<Product> search(Long chatId, String name) {
+        log.info("search for: {} from :{}", name, chatId);
         List<Product> productList = searchService.search(name);
         if (productList.isEmpty()) {
             sendMessage(chatId, "Nothing was found, please try other phrase", List.of(actions.getCancel()));
@@ -180,6 +181,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
 
         Long chatId = Utils.getChatId(update);
         String text = update.getMessage().getText();
+        log.info("subscribe to: {} from :{}", text, chatId);
         Product product;
 
         try {
@@ -207,6 +209,7 @@ public class TelegramBoot extends TelegramLongPollingBot {
         Long chatId = Utils.getChatId(update);
         List<Product> productList = productService.getSubscribedProducts(chatId);
 
+        log.info("subscribed products: {} from :{}", productList.size(), chatId);
         if (productList.isEmpty()) {
             sendMessage(chatId, "You don't have any subscription", List.of(actions.getSearch(), actions.getSubscriptions()));
         } else {
@@ -223,6 +226,8 @@ public class TelegramBoot extends TelegramLongPollingBot {
     public boolean unsubscribe(Update update, List<Product> productList) {
         Long chatId = Utils.getChatId(update);
         String text = update.getMessage().getText();
+
+        log.info("unsubscribe: from {} for :{}", text, chatId);
         Product product;
 
         try {

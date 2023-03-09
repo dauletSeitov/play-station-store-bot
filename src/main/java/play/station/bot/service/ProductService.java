@@ -1,6 +1,7 @@
 package play.station.bot.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import play.station.bot.model.entities.Product;
 import play.station.bot.model.entities.Subscriber;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ProductService {
@@ -25,7 +27,7 @@ public class ProductService {
 
     @Transactional
     public void subscribe(Product product, Long chatId, String userName, String name) {
-
+        log.info("subscribe product: {} chatId :{} userName: {} name: {}", product, chatId, userName, name);
         Subscriber subscriber = Subscriber.builder()
                 .chatId(chatId)
                 .login(userName)

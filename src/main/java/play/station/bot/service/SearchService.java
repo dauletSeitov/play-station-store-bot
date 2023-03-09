@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,6 +15,7 @@ import play.station.bot.model.entities.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class SearchService {
@@ -24,6 +26,7 @@ public class SearchService {
 
     @SneakyThrows
     public List<Product> search(String name) {
+        log.info("search: {}", name);
         List<Product> productList = new ArrayList<>();
         Document doc = Jsoup.connect(baseUrl + "es-es/search/" + name).get();
         Elements searchResultsGrid = doc.getElementsByAttributeValue("data-qa", "search-results-grid");
