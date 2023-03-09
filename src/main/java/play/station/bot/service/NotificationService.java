@@ -3,7 +3,7 @@ package play.station.bot.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import play.station.bot.model.entities.Subscriber;
-import play.station.bot.util.TelegramBoot;
+import play.station.bot.TelegramBoot;
 
 import java.util.Collection;
 

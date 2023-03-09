@@ -1,4 +1,4 @@
-package play.station.bot.util;
+package play.station.bot;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +21,7 @@ import play.station.bot.service.SubscribeService;
 import play.station.bot.states.Actions;
 import play.station.bot.states.StartState;
 import play.station.bot.states.State;
+import play.station.bot.util.Utils;
 
 import java.util.HashMap;
 import java.util.List;

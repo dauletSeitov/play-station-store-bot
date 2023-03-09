@@ -2,7 +2,7 @@ package play.station.bot.states;
 
 import org.telegram.telegrambots.meta.api.objects.Update;
 import play.station.bot.model.entities.Product;
-import play.station.bot.util.TelegramBoot;
+import play.station.bot.TelegramBoot;
 import play.station.bot.util.Utils;
 
 import java.util.List;
