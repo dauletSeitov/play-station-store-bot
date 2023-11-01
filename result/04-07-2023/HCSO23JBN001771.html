@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>
+	Hernando County Detention
+</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="Stylesheet" href="Content/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="Scripts/jquery-3.0.0.min.js"></script>
+  <script src="Scripts/jquery-ui-1.11.4.js"></script>
+  <script src="Scripts/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="https://www.hernandosheriff.org/favicon.ico" rel="shortcut icon">
+  <title>Hernando County Detention Center Inmate Search Details</title>
+  <meta name="description" content="Hernando County Detention Center Inmate Search Details">
+  <meta name="keywords" content="Hernando County, Jail, Detention, Inmate, Search">
+  <style type="text/css">
+        .fvBook {
+            margin: 0 auto 0 auto;
+        }
+
+        .fvPersonal {
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+
+        .fvHold {
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+
+        .fvAddress {
+            margin: 0 auto 0 auto;
+            width: 95%;
+            visibility: collapse;
+        }
+
+        #Content2 td {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+
+        .footer-bottom{
+            height:auto;
+        }
+    </style> <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQFDW0VKPH"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BQFDW0VKPH');
+</script>
+  <style>
+        .full {
+            width: 100%;
+        }
+
+        .footer {
+            background: #151c41;
+            height: auto;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+            .footer p {
+                margin: 0;
+            }
+
+            .footer h3 {
+                border-bottom: 1px solid white;
+                color: white;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 27px;
+                padding: 10px 0 10px;
+            }
+
+            .footer ul {
+                font-size: 13px;
+                list-style-type: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 15px;
+                color: white;
+            }
+
+                .footer ul li a {
+                    padding: 0 0 5px 0;
+                    display: block;
+                }
+
+            .footer a {
+                color: white;
+            }
+
+                .footer a:hover {
+                    color: white;
+                }
+
+        .footer-bottom {
+            background: black;
+            color: white;
+            height: 100%;
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            min-width: 200px;
+            background-color: #f1f1f1;
+        }
+
+            .dropdown-menu li a {
+                display: block;
+                clear: both;
+                line-height: 1.428571429;
+                color: black;
+                padding: 5px 5px;
+                font-weight: 400;
+            }
+
+                .dropdown-menu li a:hover {
+                    text-decoration: none;
+                    color: #262626;
+                    background-color: #93a0e6;
+                }
+
+        h5 {
+            text-align: center;
+            border-bottom: solid #151c41 2px;
+            padding-top: 10px;
+        }
+
+        .bg-dark {
+            background-color: #151c41 !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white;
+            font-size: larger;
+        }
+
+        .navbar-nav > li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        p {
+            font-family: inherit;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        body, wrapper {
+            min-height: 100vh;
+        }
+
+        .flex-fill {
+            flex: 1 1 auto;
+        }
+    </style>
+ </head>
+ <body><wrapper class="d-flex flex-column">
+   <div class="container-fluid" style="background-color: black;">
+    <div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center d-none d-lg-block">
+      <p style="color: white; padding-top: 5px;">Non-Emergency Line: (352) 754-6830 | <span style="color: darkorange">In an Emergency call 911</span></p>
+     </div>
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center d-lg-none ">
+      <p style="color: white; padding-top: 5px;">Non-Emergency Line: (352) 754-6830 <br> <span style="color: darkorange">In an Emergency call 911</span></p>
+     </div>
+    </div>
+    <div class="row" style="background-color: #151c41"><img src="https://www.hernandosheriff.org/Jail/Images/JailBanner-Blue.gif" class="img-fluid d-none d-md-block" alt="Large Banner Jail" style="margin: 0 auto"> <img src="https://www.hernandosheriff.org/Jail/Images/JailBannerSmall.gif" class="img-fluid d-md-none" alt="Small Banner Star" style="margin: 0 auto">
+    </div>
+   </div>
+   <div style="background-color: #151c41; border-top: solid black 1px" id="header"><!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
+     <h3 class="navbar-text d-lg-none d-inline-block" style="color:white">Menu</h3> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
+        <ul class="dropdown-menu">
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="http://www.hernandosheriff.org/">Sheriff's Office Home</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Default.aspx">Detention Center Home</a></li>
+        </ul></li>
+       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> FAQ </a>
+        <ul class="dropdown-menu">
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Property.aspx">Approved Inmate Property</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/BondInfo.aspx">Bond Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Commissary.aspx">Commissary</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/InmateFees.aspx">Inmate Fees</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/MailMoneyPhone.aspx">Inmate Mail, Money, and Phone</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/LegalVisitation.aspx">Legal Visitation Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Medical.aspx">Medical Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/ReleaseInfo.aspx">Release Procedures and Questions</a></li>
+         <li class="divider"></li>
+         <li style="text-align:center"><a href="https://www.hernandosheriff.org/Jail/Visitation.aspx">Visitation Hours/Process</a></li>
+        </ul></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.govpaynow.com/gps/user/plc/8160">Pay Bonds</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/">Search Inmates</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/JailStatistics.aspx">Statistics</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/JudicialBureau.aspx">Staff</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/ContactUs.aspx">Contact Us</a></li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+   <main class="flex-fill">
+    <form method="post" action="./JailSearchDetails.aspx?BookNo=HCSO23JBN001771" id="aspnetForm">
+     <div class="aspNetHidden"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="NkPRAU/N2QczyyicPXUgoA9Hdcd85PCrXGtBaE09tq9HSGouwCBA71t3wDTNYP1Ozf4McKYWN+xb3SlKNOj3Vt9inPTCElzpwBgUc4n2xFPK1nqi6drUU0QOX7qPLn7AtS8XnZr28Xtpd3xzIiKcuO9HT9JSkMvIRYQxErTOZoz9yuonaQDWWhVJRQj/kGFXIR/ULcXVBGsNPY3bkARSn1tfgTiLHyrDM4CH8L15qxp4vhL3Ebhn4GXwBU0xYx3QuH63+YS+3KZvn+URH20QaejmocYK+YgtYmfh3Cswdc1j0U9Ysq1N8HDdRjxClZV9do80tP8gLD/dbbs8o+j06Nh10c1GTVKG17RNik8VHnTAZH6nB3bQXFQvD0xWy6Nt5ZlY3h33MuVCd+de3Z2GeM7YiAH6P0jXvolUPNNePnJJ/i7GdlI2JWRdjboXvDTzIsNPeeVOPkdpTdE/tJXe4eyDB4j3fkjXKSDBuzvCW6mzmpx7XZgqbfNMthPuauu5RiRnSZopI7SfvJUtfUttl1FiJHrPeXBQE2M03IS4QtMb9QB3cSgXpExG6aI8f8NX/V9fUX8JJlsqSJugAIVxgSqGO1+K7++v+WMt+lXYQTCfrENDLPoFstdMlMhnAzq9dZm7IxEHB/KAYvXeto5SpYKbgKDYmIX1qKg42GhepzIckuVaefDdo8C9csmosMubKWDt5Bnu1owzRVOSXZ/reb7WVuq7ED4zH9W3lWOlAPCzsVGaM7Yy720BdpoXKuxm4mh+BtUfu1SDgyn79dZtuAlzY7mWvCzw9/33ZG1+MYVL6l4EcKd//N2WQ+5vetNxjj8Cgi7O+Pl6khwFV74z+GSEg1woZo3dR4200BiS6h2dSAFBb1q2gjIY018iDgNPTj1NUopiYUZevl66SfVfkhsmHzDgpv9qnMS2CgCTQ55hOy4+XLI7jLAgVbMvmwuZHIR2AUOrDFXrxDKf5WQYkc/2MDIuABTFOH7tBh1P3hZqg+EawSLOUmMox4ZvhpEpoAuQoPZf5Qk86tMw1770G2IHt4GY3//W5uP1IRwfzALKHUn91y5X0RluWIsVeoTfKnJAPGRb+oVeqmsCtAuzEZrMulnWWjVYNFguPyuZnahTFElrgI1TXHY8DUPGnOIekNZ42o3gyNEWT30/RZS3EffxRItnN4YSim+KJKw7gCRra5YgAYFf/wlOFiKhJX3fk0FNMNeEhmfM1gSXiz+sCG7jK+4aIjofT7Tplwx7s/KSynIkRghStxUKsKgqhUSip/BPRwaXAZ5tnBzNz4Q019WIAGZRx+AtCpjcpaZReYTZCqObop8/ZLCL/xndAmE2vbt2dZLVv9VnH5NZ+7TuhN5wQlXyPSxQ/9i81+3BL+uS38X76x/dc5yXCqDpklxSAXlFsxE92LIMtd9EyzMpVF5LPRmHZjG40TrVqg0RGFmiqkDpIr2h++Yk4uOZxOerwfEVBjsBZFKixla7vAlYnHR1LXurr9+oWxK43E2rjbPwrErNfWPQ4SEpJwIsWiVO09c8aoqHyqMuPcVH9zix56nh1AoWhpvGfKO5xnfL7PpSK9+5mI0ymNKyn+1y6ml2CUe5Y6JVN+rao+Wfa7g7L+9RSKO+sSMGvWxLveTtySf7o0Nth5HlaGAq/C5l5y2HH/budWc+RYFlpaR5aC+ZXzv0ayAr0JKcaD+v/WyZ1EsbInuxfrBFL26mdjU9pMppBTeFHfcSB4Q0sFCXy3KZrzlNX/J3Xd3+D4bimvc9kbYdVOZ0YqR3xHEKv7+eecoUFD7bV95VPk0skBIHlnIxB2VDHflt3S1PBQQKVYOsmCHm5Xj22VHkBRIG+GtFOblK">
+     </div>
+     <div class="aspNetHidden"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="ECD19050">
+     </div> <br>
+     <div class="container">
+      <table class="fvBook" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvBook" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto; border-style: solid; border-width: 2px; border-color: Black;">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold;">
+             <td style="border-radius: 5px 5px 0px 0px;">Hernando County Inmate Booking Information</td>
+            </tr>
+            <tr>
+             <td>
+              <table width="100%">
+               <tbody>
+                <tr>
+                 <td><img src="ShowThumb.aspx?BookNo=HCSO23JBN001771" width="175px" alt="Thumbnail"></td>
+                 <td>
+                  <table>
+                   <tbody>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Inmate Name:</td>
+                     <td align="left">ALBRITTON, AMBER RAE</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Booking #:</td>
+                     <td align="left">HCSO23JBN001771</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">MNI #:</td>
+                     <td align="left">HCSO15MNI004586</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Sex/Race:</td>
+                     <td align="left">F / W</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Date Of Birth:</td>
+                     <td align="left">10/18/1991</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Booking Date/Time:</td>
+                     <td align="left">04/07/2023 17:30</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Release Date/Time:</td>
+                     <td align="left"><span id="ctl00_ContentPlaceHolder1_fvBook_lblReleaseDateTime">-</span></td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Current Date/Time:</td>
+                     <td align="left">04/20/2023 15:10</td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr style="background-color: #330033; color: White; text-align: center; font-size: 1em;">
+                 <td colspan="2"><a href="https://www.vinelink.com/vinelink/servlet/SubjectSearch?siteID=10000&amp;agency=26&amp;offenderID=HCSO15MNI004586" style="color: White; cursor: pointer; vertical-align: middle;" title="Victim Notification Network" target="_blank"> <img src="Images/header-vinelink-blue-small.png" style="vertical-align: middle;" alt="Vine Link"><span>Sign up for VINE notification.</span></a></td>
+                </tr>
+                <tr style="background-color: #330033; color: White; text-align: center; font-size: 1em; visibility: hidden; display: none">
+                 <td colspan="2"><a href="JailVisitRequest.aspx?BookNo=HCSO23JBN001771" style="color: White; cursor: pointer">Request A Visit With This Inmate.</a></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br> <br>
+      <table class="fvPersonal" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvPersonal" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto" width="100%">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+             <td colspan="8" style="border-radius: 5px;">Inmate Personal Information</td>
+            </tr>
+            <tr style="font-weight: bold">
+             <td>Age</td>
+             <td>Race</td>
+             <td>Sex</td>
+             <td>Hair</td>
+             <td>Eyes</td>
+             <td>Height</td>
+             <td>Weight</td>
+             <td>DOB</td>
+            </tr>
+            <tr style="font-size: 10pt">
+             <td>31</td>
+             <td>W</td>
+             <td>F</td>
+             <td>BRO</td>
+             <td>BRO</td>
+             <td>5'10"</td>
+             <td>130</td>
+             <td>10/18/1991</td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br> <br>
+      <table class="fvHold" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvHoldInfo" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto" width="100%">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+             <td colspan="6" style="border-radius: 5px">Hold, Stay, and Bond Payment Information</td>
+            </tr>
+            <tr style="font-weight: bold">
+             <td>On Hold</td>
+             <td>Hold For<br> Extradition On Release</td>
+             <td>On Loan To<br> Other Agency</td>
+             <td>Time Served</td>
+             <td>Bond Out Paid</td>
+             <td>Power Number</td>
+            </tr>
+            <tr style="font-size: 10pt">
+             <td>False</td>
+             <td>False</td>
+             <td>False</td>
+             <td>Day(s)</td>
+             <td>$0.00</td>
+             <td>No Power Number</td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br>
+      <table cellspacing="0" cellpadding="2pt" style="margin: 0 auto 0 auto" width="95%">
+       <tbody>
+        <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+         <td colspan="6" style="border-radius: 5px">Case And Charge Information</td>
+        </tr>
+       </tbody>
+      </table>
+      <table cellspacing="0" cellpadding="2pt" style="margin: 5px auto; border-collapse: collapse; border: 2px solid black;" width="95%">
+       <tbody>
+        <tr style="font-weight: bold; font-size: .9em">
+         <td>Case Seq.</td>
+         <td>Court Case #</td>
+         <td>Agency Case #</td>
+         <td></td>
+         <td>Arresting Agency</td>
+        </tr>
+        <tr style="font-size: .9em">
+         <td>CASE0001</td>
+         <td>20 CF 305</td>
+         <td>2023-11268</td>
+         <td></td>
+         <td>HERNANDO COUNTY SHERIFF'S OFFICE</td>
+        </tr>
+        <tr style="font-weight: bold; font-size: .9em;">
+         <td>Bond Amount</td>
+         <td colspan="4">Bond Conditions</td>
+        </tr>
+        <tr style="font-size: .9em;">
+         <td>$0.00</td>
+         <td colspan="4">There are no bond conditions entered for this case</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black; font-size: .9em;">
+         <td colspan="6">Charges for case CASE0001:</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black">
+         <td colspan="6">
+          <table cellspacing="0" cellpadding="2px;">
+           <tbody>
+            <tr style="font-weight: bold; font-size: .9em; vertical-align: bottom;">
+             <td style="min-width: 75px">Statute</td>
+             <td style="width: 200px;">Statute Description</td>
+             <td>Counts</td>
+             <td>Bond<br> Amount</td>
+             <td>Other Information</td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>893.13.6a</td>
+             <td style="">DRUGS-POSSESS, CNTRL SUB WO PRESCRIPTION</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td>IN VIOLATION OF ALTERNATE COURT RULES SHE DOES NOT NEED TO APPEAR @ 1ST APP- COURT DATE SET FOR NEXT THURS COURT DATE FOR ALTERNATE COURT RTC: 4/13 RECOMMITMENT ORDER</td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>322.34.2a</td>
+             <td style="">MOVING TRAFFIC VIOL, DRIV WHILE LIC SUSPEND REVOCATION EQUIV STATUS</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td>IN VIOLATION OF ALTERNATE COURT RULES SHE DOES NOT NEED TO APPEAR @ 1ST APP- COURT DATE SET FOR NEXT THURS COURT DATE FOR ALTERNATE COURT RTC: 4/13 RECOMMITMENT ORDER</td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table>
+      <div style="font-size: .8em; margin: 10px 0px;">
+       Page Rendered: 4/20/2023 3:10:36 PM
+      </div>
+      <table style="margin: 0 auto 0 auto">
+       <tbody>
+        <tr style="font-size: .8em; color: Red">
+         <td>Please Do Not Rely upon this information for any type of legal action. The information on this page provides only booking information. It should not be used to determine a persons actual criminal record. This page does not reflect any charging information made by the State Attorney's Office and does not reflect the outcome of any criminal case or trial. Any acquittal or dismissal of the charge(s) does not nessessarily negate the validity of the arrest and booking. To obtain the final disposition of any criminal charges please contact the Clerk of the Circuit Court.</td>
+        </tr>
+       </tbody>
+      </table> <br>
+     </div>
+     <script>
+        $(document).ready(() => {
+            
+        })  
+
+    </script>
+    </form>
+   </main>
+   <footer>
+    <div class="footer" id="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+        <h3 style="text-align:center">Location</h3>
+        <ul>
+         <li>Hernando County Detention Center</li>
+         <li>16425 Spring Hill Dr., Brooksville Fl 34604</li>
+         <li>Phone: (352) 544-2334</li>
+         <li>Fax: (352) 544-2350</li>
+        </ul>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+        <h3 style="text-align:center">PREA</h3>
+        <ul>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/SAY_NO_TO_RAPE-HERNANDO.pdf">Say No to Sexual Abuse</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/PREAInformation.pdf">Prison Rape Elimination Act</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/PREAreport2016.pdf">PREA Audit Report</a></li>
+        </ul>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+        <h3 style="text-align:center">Helpful Links</h3>
+        <ul>
+         <li><a href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/">Search Inmates</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/JailStatistics.aspx">Detention Statistics</a></li>
+         <li><a href="https://www.govpaynow.com/gps/user/plc/8160">Pay Cash Bonds</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <div class="container text-center">
+      © 2018 Hernando County Sheriff. All rights reserved.
+     </div>
+    </div>
+   </footer> 
+  </wrapper>
+ </body>
+</html>

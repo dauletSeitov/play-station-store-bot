@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>
+	Hernando County Detention
+</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="Stylesheet" href="Content/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="Scripts/jquery-3.0.0.min.js"></script>
+  <script src="Scripts/jquery-ui-1.11.4.js"></script>
+  <script src="Scripts/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="https://www.hernandosheriff.org/favicon.ico" rel="shortcut icon">
+  <title>Hernando County Detention Center Inmate Search Details</title>
+  <meta name="description" content="Hernando County Detention Center Inmate Search Details">
+  <meta name="keywords" content="Hernando County, Jail, Detention, Inmate, Search">
+  <style type="text/css">
+        .fvBook {
+            margin: 0 auto 0 auto;
+        }
+
+        .fvPersonal {
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+
+        .fvHold {
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+
+        .fvAddress {
+            margin: 0 auto 0 auto;
+            width: 95%;
+            visibility: collapse;
+        }
+
+        #Content2 td {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+
+        .footer-bottom{
+            height:auto;
+        }
+    </style> <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQFDW0VKPH"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BQFDW0VKPH');
+</script>
+  <style>
+        .full {
+            width: 100%;
+        }
+
+        .footer {
+            background: #151c41;
+            height: auto;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+            .footer p {
+                margin: 0;
+            }
+
+            .footer h3 {
+                border-bottom: 1px solid white;
+                color: white;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 27px;
+                padding: 10px 0 10px;
+            }
+
+            .footer ul {
+                font-size: 13px;
+                list-style-type: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 15px;
+                color: white;
+            }
+
+                .footer ul li a {
+                    padding: 0 0 5px 0;
+                    display: block;
+                }
+
+            .footer a {
+                color: white;
+            }
+
+                .footer a:hover {
+                    color: white;
+                }
+
+        .footer-bottom {
+            background: black;
+            color: white;
+            height: 100%;
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            min-width: 200px;
+            background-color: #f1f1f1;
+        }
+
+            .dropdown-menu li a {
+                display: block;
+                clear: both;
+                line-height: 1.428571429;
+                color: black;
+                padding: 5px 5px;
+                font-weight: 400;
+            }
+
+                .dropdown-menu li a:hover {
+                    text-decoration: none;
+                    color: #262626;
+                    background-color: #93a0e6;
+                }
+
+        h5 {
+            text-align: center;
+            border-bottom: solid #151c41 2px;
+            padding-top: 10px;
+        }
+
+        .bg-dark {
+            background-color: #151c41 !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white;
+            font-size: larger;
+        }
+
+        .navbar-nav > li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        p {
+            font-family: inherit;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        body, wrapper {
+            min-height: 100vh;
+        }
+
+        .flex-fill {
+            flex: 1 1 auto;
+        }
+    </style>
+ </head>
+ <body><wrapper class="d-flex flex-column">
+   <div class="container-fluid" style="background-color: black;">
+    <div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center d-none d-lg-block">
+      <p style="color: white; padding-top: 5px;">Non-Emergency Line: (352) 754-6830 | <span style="color: darkorange">In an Emergency call 911</span></p>
+     </div>
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center d-lg-none ">
+      <p style="color: white; padding-top: 5px;">Non-Emergency Line: (352) 754-6830 <br> <span style="color: darkorange">In an Emergency call 911</span></p>
+     </div>
+    </div>
+    <div class="row" style="background-color: #151c41"><img src="https://www.hernandosheriff.org/Jail/Images/JailBanner-Blue.gif" class="img-fluid d-none d-md-block" alt="Large Banner Jail" style="margin: 0 auto"> <img src="https://www.hernandosheriff.org/Jail/Images/JailBannerSmall.gif" class="img-fluid d-md-none" alt="Small Banner Star" style="margin: 0 auto">
+    </div>
+   </div>
+   <div style="background-color: #151c41; border-top: solid black 1px" id="header"><!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
+     <h3 class="navbar-text d-lg-none d-inline-block" style="color:white">Menu</h3> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
+        <ul class="dropdown-menu">
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="http://www.hernandosheriff.org/">Sheriff's Office Home</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Default.aspx">Detention Center Home</a></li>
+        </ul></li>
+       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> FAQ </a>
+        <ul class="dropdown-menu">
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Property.aspx">Approved Inmate Property</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/BondInfo.aspx">Bond Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Commissary.aspx">Commissary</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/InmateFees.aspx">Inmate Fees</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/MailMoneyPhone.aspx">Inmate Mail, Money, and Phone</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/LegalVisitation.aspx">Legal Visitation Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Medical.aspx">Medical Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/ReleaseInfo.aspx">Release Procedures and Questions</a></li>
+         <li class="divider"></li>
+         <li style="text-align:center"><a href="https://www.hernandosheriff.org/Jail/Visitation.aspx">Visitation Hours/Process</a></li>
+        </ul></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.govpaynow.com/gps/user/plc/8160">Pay Bonds</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/">Search Inmates</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/JailStatistics.aspx">Statistics</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/JudicialBureau.aspx">Staff</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/ContactUs.aspx">Contact Us</a></li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+   <main class="flex-fill">
+    <form method="post" action="./JailSearchDetails.aspx?BookNo=HCSO23JBN001911" id="aspnetForm">
+     <div class="aspNetHidden"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+     </div>
+     <div class="aspNetHidden"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="ECD19050">
+     </div> <br>
+     <div class="container">
+      <table class="fvBook" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvBook" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto; border-style: solid; border-width: 2px; border-color: Black;">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold;">
+             <td style="border-radius: 5px 5px 0px 0px;">Hernando County Inmate Booking Information</td>
+            </tr>
+            <tr>
+             <td>
+              <table width="100%">
+               <tbody>
+                <tr>
+                 <td><img src="ShowThumb.aspx?BookNo=HCSO23JBN001911" width="175px" alt="Thumbnail"></td>
+                 <td>
+                  <table>
+                   <tbody>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Inmate Name:</td>
+                     <td align="left">WILLIAMS, SEBASTIAN JOHN</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Booking #:</td>
+                     <td align="left">HCSO23JBN001911</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">MNI #:</td>
+                     <td align="left">HCSO23MNI000897</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Sex/Race:</td>
+                     <td align="left">M / W</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Date Of Birth:</td>
+                     <td align="left">08/31/2003</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Booking Date/Time:</td>
+                     <td align="left">04/14/2023 10:48</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Release Date/Time:</td>
+                     <td align="left"><span id="ctl00_ContentPlaceHolder1_fvBook_lblReleaseDateTime">-</span></td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Current Date/Time:</td>
+                     <td align="left">04/20/2023 16:05</td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr style="background-color: #330033; color: White; text-align: center; font-size: 1em;">
+                 <td colspan="2"><a href="https://www.vinelink.com/vinelink/servlet/SubjectSearch?siteID=10000&amp;agency=26&amp;offenderID=HCSO23MNI000897" style="color: White; cursor: pointer; vertical-align: middle;" title="Victim Notification Network" target="_blank"> <img src="Images/header-vinelink-blue-small.png" style="vertical-align: middle;" alt="Vine Link"><span>Sign up for VINE notification.</span></a></td>
+                </tr>
+                <tr style="background-color: #330033; color: White; text-align: center; font-size: 1em; visibility: hidden; display: none">
+                 <td colspan="2"><a href="JailVisitRequest.aspx?BookNo=HCSO23JBN001911" style="color: White; cursor: pointer">Request A Visit With This Inmate.</a></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br> <br>
+      <table class="fvPersonal" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvPersonal" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto" width="100%">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+             <td colspan="8" style="border-radius: 5px;">Inmate Personal Information</td>
+            </tr>
+            <tr style="font-weight: bold">
+             <td>Age</td>
+             <td>Race</td>
+             <td>Sex</td>
+             <td>Hair</td>
+             <td>Eyes</td>
+             <td>Height</td>
+             <td>Weight</td>
+             <td>DOB</td>
+            </tr>
+            <tr style="font-size: 10pt">
+             <td>19</td>
+             <td>W</td>
+             <td>M</td>
+             <td>BRO</td>
+             <td>BLU</td>
+             <td>6'00"</td>
+             <td>200</td>
+             <td>08/31/2003</td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br> <br>
+      <table class="fvHold" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvHoldInfo" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto" width="100%">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+             <td colspan="6" style="border-radius: 5px">Hold, Stay, and Bond Payment Information</td>
+            </tr>
+            <tr style="font-weight: bold">
+             <td>On Hold</td>
+             <td>Hold For<br> Extradition On Release</td>
+             <td>On Loan To<br> Other Agency</td>
+             <td>Time Served</td>
+             <td>Bond Out Paid</td>
+             <td>Power Number</td>
+            </tr>
+            <tr style="font-size: 10pt">
+             <td>True</td>
+             <td>False</td>
+             <td>False</td>
+             <td>Day(s)</td>
+             <td>$0.00</td>
+             <td>No Power Number</td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br>
+      <table cellspacing="0" cellpadding="2pt" style="margin: 0 auto 0 auto" width="95%">
+       <tbody>
+        <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+         <td colspan="6" style="border-radius: 5px">Case And Charge Information</td>
+        </tr>
+       </tbody>
+      </table>
+      <table cellspacing="0" cellpadding="2pt" style="margin: 5px auto; border-collapse: collapse; border: 2px solid black;" width="95%">
+       <tbody>
+        <tr style="font-weight: bold; font-size: .9em">
+         <td>Case Seq.</td>
+         <td>Court Case #</td>
+         <td>Agency Case #</td>
+         <td></td>
+         <td>Arresting Agency</td>
+        </tr>
+        <tr style="font-size: .9em">
+         <td>CASE0001</td>
+         <td>22 CF 903</td>
+         <td>2022-18255</td>
+         <td></td>
+         <td>HERNANDO COUNTY SHERIFF'S OFFICE</td>
+        </tr>
+        <tr style="font-weight: bold; font-size: .9em;">
+         <td>Bond Amount</td>
+         <td colspan="4">Bond Conditions</td>
+        </tr>
+        <tr style="font-size: .9em;">
+         <td>$531,000.00</td>
+         <td colspan="4">There are no bond conditions entered for this case</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black; font-size: .9em;">
+         <td colspan="6">Charges for case CASE0001:</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black">
+         <td colspan="6">
+          <table cellspacing="0" cellpadding="2px;">
+           <tbody>
+            <tr style="font-weight: bold; font-size: .9em; vertical-align: bottom;">
+             <td style="min-width: 75px">Statute</td>
+             <td style="width: 200px;">Statute Description</td>
+             <td>Counts</td>
+             <td>Bond<br> Amount</td>
+             <td>Other Information</td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>817.5685.3b2</td>
+             <td style="">FRAUD-IMPERSON, KNOW INTENT UNLAW POSSES 5 OR MORE IDENT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$5,000.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.04.1a</td>
+             <td style="">CONTRIB DELINQ MINOR, CAUSE TO BECOME DELINQ DEPENDENT NEEDY</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$1,000.00</td>
+             <td></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table>
+      <table cellspacing="0" cellpadding="2pt" style="margin: 5px auto; border-collapse: collapse; border: 2px solid black;" width="95%">
+       <tbody>
+        <tr style="font-weight: bold; font-size: .9em">
+         <td>Case Seq.</td>
+         <td>Court Case #</td>
+         <td>Agency Case #</td>
+         <td></td>
+         <td>Arresting Agency</td>
+        </tr>
+        <tr style="font-size: .9em">
+         <td>CASE0002</td>
+         <td>22 CF 1016</td>
+         <td>2022-18523</td>
+         <td></td>
+         <td>HERNANDO COUNTY SHERIFF'S OFFICE</td>
+        </tr>
+        <tr style="font-weight: bold; font-size: .9em;">
+         <td>Bond Amount</td>
+         <td colspan="4">Bond Conditions</td>
+        </tr>
+        <tr style="font-size: .9em;">
+         <td>$25,000.00</td>
+         <td colspan="4">There are no bond conditions entered for this case</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black; font-size: .9em;">
+         <td colspan="6">Charges for case CASE0002:</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black">
+         <td colspan="6">
+          <table cellspacing="0" cellpadding="2px;">
+           <tbody>
+            <tr style="font-weight: bold; font-size: .9em; vertical-align: bottom;">
+             <td style="min-width: 75px">Statute</td>
+             <td style="width: 200px;">Statute Description</td>
+             <td>Counts</td>
+             <td>Bond<br> Amount</td>
+             <td>Other Information</td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>810.02.2b</td>
+             <td style="">BURGL, DWELLING STRUCTURE OR CONVEYANCE ARMED</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$25,000.00</td>
+             <td></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table>
+      <div style="font-size: .8em; margin: 10px 0px;">
+       Page Rendered: 4/20/2023 4:05:40 PM
+      </div>
+      <table style="margin: 0 auto 0 auto">
+       <tbody>
+        <tr style="font-size: .8em; color: Red">
+         <td>Please Do Not Rely upon this information for any type of legal action. The information on this page provides only booking information. It should not be used to determine a persons actual criminal record. This page does not reflect any charging information made by the State Attorney's Office and does not reflect the outcome of any criminal case or trial. Any acquittal or dismissal of the charge(s) does not nessessarily negate the validity of the arrest and booking. To obtain the final disposition of any criminal charges please contact the Clerk of the Circuit Court.</td>
+        </tr>
+       </tbody>
+      </table> <br>
+     </div>
+     <script>
+        $(document).ready(() => {
+            
+        })  
+
+    </script>
+    </form>
+   </main>
+   <footer>
+    <div class="footer" id="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+        <h3 style="text-align:center">Location</h3>
+        <ul>
+         <li>Hernando County Detention Center</li>
+         <li>16425 Spring Hill Dr., Brooksville Fl 34604</li>
+         <li>Phone: (352) 544-2334</li>
+         <li>Fax: (352) 544-2350</li>
+        </ul>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+        <h3 style="text-align:center">PREA</h3>
+        <ul>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/SAY_NO_TO_RAPE-HERNANDO.pdf">Say No to Sexual Abuse</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/PREAInformation.pdf">Prison Rape Elimination Act</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/PREAreport2016.pdf">PREA Audit Report</a></li>
+        </ul>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+        <h3 style="text-align:center">Helpful Links</h3>
+        <ul>
+         <li><a href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/">Search Inmates</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/JailStatistics.aspx">Detention Statistics</a></li>
+         <li><a href="https://www.govpaynow.com/gps/user/plc/8160">Pay Cash Bonds</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <div class="container text-center">
+      © 2018 Hernando County Sheriff. All rights reserved.
+     </div>
+    </div>
+   </footer> 
+  </wrapper>
+ </body>
+</html>

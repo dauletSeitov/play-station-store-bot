@@ -1,0 +1,23 @@
+2023-03-24 11:25:00.896  INFO 115441 --- [main] p.station.bot.BabySharkDoDotApplication  : Starting BabySharkDoDotApplication using Java 11.0.18 on phantom with PID 115441 (/home/phantom/IdeaProjects/play-station-store-bot/build/classes/java/main started by phantom in /home/phantom/IdeaProjects/play-station-store-bot)
+2023-03-24 11:25:00.898  INFO 115441 --- [main] p.station.bot.BabySharkDoDotApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-03-24 11:25:01.343  INFO 115441 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-24 11:25:01.386  INFO 115441 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2023-03-24 11:25:02.047  INFO 115441 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-24 11:25:02.057  INFO 115441 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-24 11:25:02.057  INFO 115441 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-24 11:25:02.149  INFO 115441 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-24 11:25:02.150  INFO 115441 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1183 ms
+2023-03-24 11:25:02.327  INFO 115441 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-24 11:25:02.370  INFO 115441 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-03-24 11:25:02.528  INFO 115441 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-24 11:25:02.594  INFO 115441 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+2023-03-24 11:25:02.628  INFO 115441 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-24 11:25:02.717  INFO 115441 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-24 11:25:03.249  INFO 115441 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-24 11:25:03.255  INFO 115441 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-24 11:25:03.996  WARN 115441 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-24 11:25:04.247  INFO 115441 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-24 11:25:04.697  INFO 115441 --- [main] p.station.bot.BabySharkDoDotApplication  : Started BabySharkDoDotApplication in 4.2 seconds (JVM running for 4.512)
+2023-03-24 11:26:12.654  INFO 115441 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-24 11:26:12.657  INFO 115441 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-24 11:26:12.660  INFO 115441 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

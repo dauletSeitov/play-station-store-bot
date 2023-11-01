@@ -1,0 +1,1 @@
+https://web.np.playstation.com/api/graphql/v1//op?operationName=queryRetrieveTelemetryDataPDPProduct&variables=%7B%22conceptId%22%3Anull%2C%22productId%22%3A%22EP4433-CUSA00265_00-MINECRAFTPS40001%22%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22163ce11323f3618e7a2fb5ef467db2f7f02ddade88218a83b5b414f1f65cfdce%22%7D%7D

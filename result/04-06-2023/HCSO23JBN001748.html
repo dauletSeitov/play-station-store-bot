@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>
+	Hernando County Detention
+</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="Stylesheet" href="Content/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="Scripts/jquery-3.0.0.min.js"></script>
+  <script src="Scripts/jquery-ui-1.11.4.js"></script>
+  <script src="Scripts/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="https://www.hernandosheriff.org/favicon.ico" rel="shortcut icon">
+  <title>Hernando County Detention Center Inmate Search Details</title>
+  <meta name="description" content="Hernando County Detention Center Inmate Search Details">
+  <meta name="keywords" content="Hernando County, Jail, Detention, Inmate, Search">
+  <style type="text/css">
+        .fvBook {
+            margin: 0 auto 0 auto;
+        }
+
+        .fvPersonal {
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+
+        .fvHold {
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+
+        .fvAddress {
+            margin: 0 auto 0 auto;
+            width: 95%;
+            visibility: collapse;
+        }
+
+        #Content2 td {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+
+        .footer-bottom{
+            height:auto;
+        }
+    </style> <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQFDW0VKPH"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BQFDW0VKPH');
+</script>
+  <style>
+        .full {
+            width: 100%;
+        }
+
+        .footer {
+            background: #151c41;
+            height: auto;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+            .footer p {
+                margin: 0;
+            }
+
+            .footer h3 {
+                border-bottom: 1px solid white;
+                color: white;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 27px;
+                padding: 10px 0 10px;
+            }
+
+            .footer ul {
+                font-size: 13px;
+                list-style-type: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-top: 15px;
+                color: white;
+            }
+
+                .footer ul li a {
+                    padding: 0 0 5px 0;
+                    display: block;
+                }
+
+            .footer a {
+                color: white;
+            }
+
+                .footer a:hover {
+                    color: white;
+                }
+
+        .footer-bottom {
+            background: black;
+            color: white;
+            height: 100%;
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            min-width: 200px;
+            background-color: #f1f1f1;
+        }
+
+            .dropdown-menu li a {
+                display: block;
+                clear: both;
+                line-height: 1.428571429;
+                color: black;
+                padding: 5px 5px;
+                font-weight: 400;
+            }
+
+                .dropdown-menu li a:hover {
+                    text-decoration: none;
+                    color: #262626;
+                    background-color: #93a0e6;
+                }
+
+        h5 {
+            text-align: center;
+            border-bottom: solid #151c41 2px;
+            padding-top: 10px;
+        }
+
+        .bg-dark {
+            background-color: #151c41 !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white;
+            font-size: larger;
+        }
+
+        .navbar-nav > li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        p {
+            font-family: inherit;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        body, wrapper {
+            min-height: 100vh;
+        }
+
+        .flex-fill {
+            flex: 1 1 auto;
+        }
+    </style>
+ </head>
+ <body><wrapper class="d-flex flex-column">
+   <div class="container-fluid" style="background-color: black;">
+    <div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center d-none d-lg-block">
+      <p style="color: white; padding-top: 5px;">Non-Emergency Line: (352) 754-6830 | <span style="color: darkorange">In an Emergency call 911</span></p>
+     </div>
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center d-lg-none ">
+      <p style="color: white; padding-top: 5px;">Non-Emergency Line: (352) 754-6830 <br> <span style="color: darkorange">In an Emergency call 911</span></p>
+     </div>
+    </div>
+    <div class="row" style="background-color: #151c41"><img src="https://www.hernandosheriff.org/Jail/Images/JailBanner-Blue.gif" class="img-fluid d-none d-md-block" alt="Large Banner Jail" style="margin: 0 auto"> <img src="https://www.hernandosheriff.org/Jail/Images/JailBannerSmall.gif" class="img-fluid d-md-none" alt="Small Banner Star" style="margin: 0 auto">
+    </div>
+   </div>
+   <div style="background-color: #151c41; border-top: solid black 1px" id="header"><!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
+     <h3 class="navbar-text d-lg-none d-inline-block" style="color:white">Menu</h3> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
+        <ul class="dropdown-menu">
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="http://www.hernandosheriff.org/">Sheriff's Office Home</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Default.aspx">Detention Center Home</a></li>
+        </ul></li>
+       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> FAQ </a>
+        <ul class="dropdown-menu">
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Property.aspx">Approved Inmate Property</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/BondInfo.aspx">Bond Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Commissary.aspx">Commissary</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/InmateFees.aspx">Inmate Fees</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/MailMoneyPhone.aspx">Inmate Mail, Money, and Phone</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/LegalVisitation.aspx">Legal Visitation Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/Medical.aspx">Medical Information</a></li>
+         <li class="divider"></li>
+         <li style="border-bottom: solid black 1px; text-align:center;"><a href="https://www.hernandosheriff.org/Jail/ReleaseInfo.aspx">Release Procedures and Questions</a></li>
+         <li class="divider"></li>
+         <li style="text-align:center"><a href="https://www.hernandosheriff.org/Jail/Visitation.aspx">Visitation Hours/Process</a></li>
+        </ul></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.govpaynow.com/gps/user/plc/8160">Pay Bonds</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/">Search Inmates</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/JailStatistics.aspx">Statistics</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/JudicialBureau.aspx">Staff</a></li>
+       <li class="nav-item"><a class="nav-link" href="https://www.hernandosheriff.org/Jail/ContactUs.aspx">Contact Us</a></li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+   <main class="flex-fill">
+    <form method="post" action="./JailSearchDetails.aspx?BookNo=HCSO23JBN001748" id="aspnetForm">
+     <div class="aspNetHidden"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+     </div>
+     <div class="aspNetHidden"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="ECD19050">
+     </div> <br>
+     <div class="container">
+      <table class="fvBook" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvBook" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto; border-style: solid; border-width: 2px; border-color: Black;">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold;">
+             <td style="border-radius: 5px 5px 0px 0px;">Hernando County Inmate Booking Information</td>
+            </tr>
+            <tr>
+             <td>
+              <table width="100%">
+               <tbody>
+                <tr>
+                 <td><img src="ShowThumb.aspx?BookNo=HCSO23JBN001748" width="175px" alt="Thumbnail"></td>
+                 <td>
+                  <table>
+                   <tbody>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Inmate Name:</td>
+                     <td align="left">SIMS, STEVEN FRANCIS</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Booking #:</td>
+                     <td align="left">HCSO23JBN001748</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">MNI #:</td>
+                     <td align="left">HCSO23MNI000805</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Sex/Race:</td>
+                     <td align="left">M / W</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Date Of Birth:</td>
+                     <td align="left">02/27/1975</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Booking Date/Time:</td>
+                     <td align="left">04/06/2023 11:27</td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Release Date/Time:</td>
+                     <td align="left"><span id="ctl00_ContentPlaceHolder1_fvBook_lblReleaseDateTime">-</span></td>
+                    </tr>
+                    <tr>
+                     <td align="right" style="font-weight: bold">Current Date/Time:</td>
+                     <td align="left">04/20/2023 15:00</td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr style="background-color: #330033; color: White; text-align: center; font-size: 1em;">
+                 <td colspan="2"><a href="https://www.vinelink.com/vinelink/servlet/SubjectSearch?siteID=10000&amp;agency=26&amp;offenderID=HCSO23MNI000805" style="color: White; cursor: pointer; vertical-align: middle;" title="Victim Notification Network" target="_blank"> <img src="Images/header-vinelink-blue-small.png" style="vertical-align: middle;" alt="Vine Link"><span>Sign up for VINE notification.</span></a></td>
+                </tr>
+                <tr style="background-color: #330033; color: White; text-align: center; font-size: 1em; visibility: hidden; display: none">
+                 <td colspan="2"><a href="JailVisitRequest.aspx?BookNo=HCSO23JBN001748" style="color: White; cursor: pointer">Request A Visit With This Inmate.</a></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br> <br>
+      <table class="fvPersonal" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvPersonal" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto" width="100%">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+             <td colspan="8" style="border-radius: 5px;">Inmate Personal Information</td>
+            </tr>
+            <tr style="font-weight: bold">
+             <td>Age</td>
+             <td>Race</td>
+             <td>Sex</td>
+             <td>Hair</td>
+             <td>Eyes</td>
+             <td>Height</td>
+             <td>Weight</td>
+             <td>DOB</td>
+            </tr>
+            <tr style="font-size: 10pt">
+             <td>48</td>
+             <td>W</td>
+             <td>M</td>
+             <td>BLD</td>
+             <td>BLU</td>
+             <td>5'06"</td>
+             <td>175</td>
+             <td>02/27/1975</td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br> <br>
+      <table class="fvHold" cellspacing="0" id="ctl00_ContentPlaceHolder1_fvHoldInfo" style="border-collapse:collapse;">
+       <tbody>
+        <tr>
+         <td colspan="2">
+          <table cellspacing="0" style="margin: 0 auto 0 auto" width="100%">
+           <tbody>
+            <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+             <td colspan="6" style="border-radius: 5px">Hold, Stay, and Bond Payment Information</td>
+            </tr>
+            <tr style="font-weight: bold">
+             <td>On Hold</td>
+             <td>Hold For<br> Extradition On Release</td>
+             <td>On Loan To<br> Other Agency</td>
+             <td>Time Served</td>
+             <td>Bond Out Paid</td>
+             <td>Power Number</td>
+            </tr>
+            <tr style="font-size: 10pt">
+             <td>False</td>
+             <td>False</td>
+             <td>False</td>
+             <td>Day(s)</td>
+             <td>$0.00</td>
+             <td>No Power Number</td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table> <br>
+      <table cellspacing="0" cellpadding="2pt" style="margin: 0 auto 0 auto" width="95%">
+       <tbody>
+        <tr style="text-align: center; background-color: #330033; color: White; font-size: 1.2em; font-weight: bold">
+         <td colspan="6" style="border-radius: 5px">Case And Charge Information</td>
+        </tr>
+       </tbody>
+      </table>
+      <table cellspacing="0" cellpadding="2pt" style="margin: 5px auto; border-collapse: collapse; border: 2px solid black;" width="95%">
+       <tbody>
+        <tr style="font-weight: bold; font-size: .9em">
+         <td>Case Seq.</td>
+         <td>Court Case #</td>
+         <td>Agency Case #</td>
+         <td></td>
+         <td>Arresting Agency</td>
+        </tr>
+        <tr style="font-size: .9em">
+         <td>CASE0001</td>
+         <td>23 CF 0566</td>
+         <td>2023-08320</td>
+         <td></td>
+         <td>HERNANDO COUNTY SHERIFF'S OFFICE</td>
+        </tr>
+        <tr style="font-weight: bold; font-size: .9em;">
+         <td>Bond Amount</td>
+         <td colspan="4">Bond Conditions</td>
+        </tr>
+        <tr style="font-size: .9em;">
+         <td>$0.00</td>
+         <td colspan="4">There are no bond conditions entered for this case</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black; font-size: .9em;">
+         <td colspan="6">Charges for case CASE0001:</td>
+        </tr>
+        <tr style="background-color: Silver; color: Black">
+         <td colspan="6">
+          <table cellspacing="0" cellpadding="2px;">
+           <tbody>
+            <tr style="font-weight: bold; font-size: .9em; vertical-align: bottom;">
+             <td style="min-width: 75px">Statute</td>
+             <td style="width: 200px;">Statute Description</td>
+             <td>Counts</td>
+             <td>Bond<br> Amount</td>
+             <td>Other Information</td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+            <tr style="font-size: .9em; vertical-align: top;">
+             <td>827.071.5</td>
+             <td style="">OBSCENE MATERIAL-POSSESS, POSS CONTROL VIEW DEPICTION CHILD SEX CONDUCT</td>
+             <td style="text-align: center">1</td>
+             <td class="bondcharges">$0.00</td>
+             <td></td>
+            </tr>
+           </tbody>
+          </table></td>
+        </tr>
+       </tbody>
+      </table>
+      <div style="font-size: .8em; margin: 10px 0px;">
+       Page Rendered: 4/20/2023 3:00:41 PM
+      </div>
+      <table style="margin: 0 auto 0 auto">
+       <tbody>
+        <tr style="font-size: .8em; color: Red">
+         <td>Please Do Not Rely upon this information for any type of legal action. The information on this page provides only booking information. It should not be used to determine a persons actual criminal record. This page does not reflect any charging information made by the State Attorney's Office and does not reflect the outcome of any criminal case or trial. Any acquittal or dismissal of the charge(s) does not nessessarily negate the validity of the arrest and booking. To obtain the final disposition of any criminal charges please contact the Clerk of the Circuit Court.</td>
+        </tr>
+       </tbody>
+      </table> <br>
+     </div>
+     <script>
+        $(document).ready(() => {
+            
+        })  
+
+    </script>
+    </form>
+   </main>
+   <footer>
+    <div class="footer" id="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+        <h3 style="text-align:center">Location</h3>
+        <ul>
+         <li>Hernando County Detention Center</li>
+         <li>16425 Spring Hill Dr., Brooksville Fl 34604</li>
+         <li>Phone: (352) 544-2334</li>
+         <li>Fax: (352) 544-2350</li>
+        </ul>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+        <h3 style="text-align:center">PREA</h3>
+        <ul>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/SAY_NO_TO_RAPE-HERNANDO.pdf">Say No to Sexual Abuse</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/PREAInformation.pdf">Prison Rape Elimination Act</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/pdf/PREAreport2016.pdf">PREA Audit Report</a></li>
+        </ul>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+        <h3 style="text-align:center">Helpful Links</h3>
+        <ul>
+         <li><a href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/">Search Inmates</a></li>
+         <li><a href="https://www.hernandosheriff.org/Jail/Applications/JailSearch/JailStatistics.aspx">Detention Statistics</a></li>
+         <li><a href="https://www.govpaynow.com/gps/user/plc/8160">Pay Cash Bonds</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <div class="container text-center">
+      © 2018 Hernando County Sheriff. All rights reserved.
+     </div>
+    </div>
+   </footer> 
+  </wrapper>
+ </body>
+</html>
